@@ -9,18 +9,19 @@ public class main {
         Product cheese = new ShippableProduct("Cheese", 5, 3, 200);
         Product scratchCard = new RegularProduct("Scratch Card", 10, 100);
         Product biscuits = new ExpirableProduct("Biscuits", 2, 30, LocalDate.of(2023, 12, 31));
-
-        Customer customer = new Customer("John Doe", 3000.00);
+        // change this ti 300 to check when customer insufficient Balance
+        Customer customer = new Customer("Mazen Essam", 3000.00);
         Cart cart = new Cart();
 
         try {
+            // remove these lines to check when cart is empty
             cart.add(tv, 1);
             cart.add(mobile, 1);
             cart.add(biscuits, 9);
             cart.add(scratchCard, 5);
 
             // add more than available (fail)
-            cart.add(cheese, 3);
+//            cart.add(cheese, 4);
 
 
             Checkout(customer,cart);
